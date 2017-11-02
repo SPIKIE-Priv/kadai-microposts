@@ -35,9 +35,9 @@ class FavoritesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(Request $request, $microposts_id)
     {
-        \Auth::user()->addFavorite($id);
+        \Auth::user()->addFavorite($microposts_id);
         return redirect()->back();
     }
 
@@ -81,9 +81,9 @@ class FavoritesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($microposts_id)
     {
-        \Auth::user()->unFavorite($id);
+        \Auth::user()->unFavorite($microposts_id);
         return redirect()->back();
     }
 }
